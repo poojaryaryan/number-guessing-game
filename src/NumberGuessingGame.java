@@ -6,9 +6,9 @@ public class NumberGuessingGame {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.println("********************");
-        System.out.println("Number Guessing Game");
-        System.out.println("********************");
+        System.out.println("==================================");
+        System.out.println("      NUMBER GUESSING GAME");
+        System.out.println("==================================");
 
         boolean playAgain = true;
         int number = 0;
@@ -16,11 +16,14 @@ public class NumberGuessingGame {
         while(playAgain) {
             number = selectGameMode(sc,random);
 
-            System.out.println("Do you want to play with limited attempts or unlimited attempts?");
+            System.out.println("\n==================================");
+            System.out.println("        ATTEMPT MODE");
+            System.out.println("==================================");
+
             System.out.println("1. Limited Attempts");
             System.out.println("2. Unlimited Attempts");
 
-            System.out.print("Enter choice: ");
+            System.out.print("\nEnter your choice (1-2): ");
             int choice = sc.nextInt();
 
             while (choice != 1 && choice != 2) {
@@ -47,10 +50,10 @@ public class NumberGuessingGame {
 
             while (attempts > 0) {
 
-                System.out.print("Guess a number from " + lb + " to " + ub + ": ");
+                System.out.print("Guess a number from (" + lb + "-" + ub + "): ");
                 guess = sc.nextInt();
                 while (guess < lb || guess > ub) {
-                    System.out.print("Please enter a number between " + lb + " and " + ub + ": ");
+                    System.out.print("Please enter a number between (" + lb + "-" + ub + "): ");
                     guess = sc.nextInt();
                 }
 
@@ -63,32 +66,40 @@ public class NumberGuessingGame {
 
                 if(attempts > 0){
                     if (guess > number) {
-                        System.out.println("Your guess is too high.");
+                        System.out.println("Too high! Try again.");
                     } else {
-                        System.out.println("Your guess is too low.");
+                        System.out.println("Too low! Try again.");
                     }
                 }
             }
 
             if (guess == number) {
-                System.out.println("\nYour guess is correct! The number was " + number);
-                System.out.println("Attempts used: " + attemptsUsed);
+                System.out.println("\n==================================");
+                System.out.println("       CONGRATULATIONS!");
+                System.out.println("==================================");
+                System.out.println("You guessed the correct number!");
+                System.out.println("Number : " + number);
+                System.out.println("Attempts Used : " + attemptsUsed);
             } else {
-                System.out.println("\nNo more attempts left!");
-                System.out.println("The correct number was " + number);
+                System.out.println("\n==================================");
+                System.out.println("          GAME OVER");
+                System.out.println("==================================");
+                System.out.println("You've used all your attempts.");
+                System.out.println("The correct number was : " + number);
             }
 
-            System.out.println("\n==============================");
-            System.out.println("Would you like to play again?");
+            System.out.println("\n==================================");
+            System.out.println("          PLAY AGAIN?");
+            System.out.println("==================================");
+
             System.out.println("1. Yes");
             System.out.println("2. No");
-            System.out.print("Enter choice: ");
+
+            System.out.print("\nEnter your choice (1-2): ");
             int choice2 = sc.nextInt();
 
             while (choice2 != 1 && choice2 != 2) {
                 System.out.print("Enter a VALID choice: ");
-                System.out.println("1. Yes");
-                System.out.println("2. No");
                 choice2 = sc.nextInt();
             }
 
@@ -97,7 +108,10 @@ public class NumberGuessingGame {
             }
         }
 
-        System.out.println("\nThanks for playing!");
+        System.out.println("\n==================================");
+        System.out.println(" Thanks for playing!");
+        System.out.println(" Have a great day!");
+        System.out.println("==================================");
 
         sc.close();
     }
@@ -105,10 +119,15 @@ public class NumberGuessingGame {
     public static int ub = 0;
     public static int selectGameMode(Scanner sc, Random random){
         int number = 0;
-        System.out.println("Select Game Mode: ");
-        System.out.println("1. Custom Game --> You can choose the LOWER BOUND and UPPER BOUND.");
-        System.out.println("2. Quick Game --> You can choose from PREDEFINED RANGES.");
-        System.out.print("Enter choice(1/2): ");
+        System.out.println("\n==================================");
+        System.out.println("         SELECT GAME MODE");
+        System.out.println("==================================");
+        System.out.println("1. Custom Game");
+        System.out.println("   • Choose your own lower and upper bounds.");
+        System.out.println();
+        System.out.println("2. Quick Game");
+        System.out.println("   • Choose from predefined ranges.");
+        System.out.print("\nEnter your choice (1-2): ");
         int choice = sc.nextInt();
 
         while(choice!=1 && choice!=2){
@@ -120,36 +139,41 @@ public class NumberGuessingGame {
         }
 
         if(choice==1){
-            System.out.println("Welcome to CUSTOM GAME!");
-            System.out.println("Rules:");
-            System.out.println("1.Both BOUNDS must be greater(>) than or equal(=) to zero.");
-            System.out.println("2.LOWER BOUND must be less than UPPER BOUND.");
-            System.out.println("3.UPPER BOUND must be greater than LOWER BOUND.");
-            System.out.println("4.Both LOWER BOUND and UPPER BOUND entered will be INCLUSIVE.");
+            System.out.println("\n==================================");
+            System.out.println("         CUSTOM GAME");
+            System.out.println("==================================");
 
-            System.out.print("Enter LOWER BOUND: ");
+            System.out.println("Rules:");
+            System.out.println("• Both bounds must be greater than or equal to 0.");
+            System.out.println("• Lower bound must be less than the upper bound.");
+            System.out.println("• Both bounds are inclusive.");
+            System.out.println();
+
+            System.out.print("Enter lower bound: ");
             int lowerBound = sc.nextInt();
             while(lowerBound<0){
-                System.out.print("Invalid. Enter LOWER BOUND again: ");
+                System.out.print("Invalid. Enter lower bound again: ");
                 lowerBound = sc.nextInt();
             }
-            System.out.print("Enter UPPER BOUND: ");
+            System.out.print("Enter upper bound: ");
             int upperBound = sc.nextInt();
             while((upperBound<0) || (upperBound<=lowerBound)){
                 if(upperBound<0){
-                    System.out.print("Invalid. Enter UPPER BOUND again: ");
+                    System.out.print("Invalid. Enter upper bound again: ");
                     upperBound = sc.nextInt();
                 }
                 else{
-                    System.out.println("UPPER BOUND cannot be less than LOWER BOUND.");
-                    System.out.print("Enter UPPER BOUND again: ");
+                    System.out.println("Upper bound cannot be less than LOWER BOUND.");
+                    System.out.print("Enter upper bound again: ");
                     upperBound = sc.nextInt();
                 }
             }
             number = random.nextInt(lowerBound,upperBound+1);
             lb = lowerBound;
             ub = upperBound;
-            System.out.println("Your range is: " + lowerBound + "-" + upperBound);
+            System.out.println("\n----------------------------------");
+            System.out.println("Your range : " + lowerBound + "-" + upperBound);
+            System.out.println("----------------------------------");
         }
         else{
             System.out.println("Welcome to QUICK GAME!");
@@ -167,25 +191,33 @@ public class NumberGuessingGame {
             switch(quickGameChoice){
                 case 1 :
                     number = random.nextInt(1,51);
-                    System.out.println("Selected range: 1-50");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("Selected Range : 1 - 50");
+                    System.out.println("----------------------------------");
                     lb = 1;
                     ub = 50;
                     break;
                 case 2 :
                     number = random.nextInt(1,101);
-                    System.out.println("Selected range: 1-100");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("Selected Range : 1 - 100");
+                    System.out.println("----------------------------------");
                     lb = 1;
                     ub = 100;
                     break;
                 case 3 :
                     number = random.nextInt(1,501);
-                    System.out.println("Selected range: 1-500");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("Selected Range : 1 - 500");
+                    System.out.println("----------------------------------");
                     lb = 1;
                     ub = 500;
                     break;
                 case 4 :
                     number = random.nextInt(1,1001);
-                    System.out.println("Selected range: 1-1000");
+                    System.out.println("\n----------------------------------");
+                    System.out.println("Selected Range : 1 - 1000");
+                    System.out.println("----------------------------------");
                     lb = 1;
                     ub = 1000;
                     break;
