@@ -109,8 +109,8 @@ public class NumberGuessingGame {
         }
 
         System.out.println("\n==================================");
-        System.out.println(" Thanks for playing!");
-        System.out.println(" Have a great day!");
+        System.out.println("       Thanks for playing!          ");
+        System.out.println("        Have a great day!            ");
         System.out.println("==================================");
 
         sc.close();
@@ -131,10 +131,7 @@ public class NumberGuessingGame {
         int choice = sc.nextInt();
 
         while(choice!=1 && choice!=2){
-            System.out.println("Invalid choice!");
-            System.out.println("1. Custom Game --> You can choose the LOWER BOUND and UPPER BOUND.");
-            System.out.println("2. Quick Game --> You can choose from PREDEFINED RANGES.");
-            System.out.print("Enter again: ");
+            System.out.print("Invalid choice! Please enter 1 or 2: ");
             choice = sc.nextInt();
         }
 
