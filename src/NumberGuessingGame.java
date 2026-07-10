@@ -50,7 +50,7 @@ public class NumberGuessingGame {
 
             while (attempts > 0) {
 
-                System.out.print("Guess a number from (" + lb + "-" + ub + "): ");
+                System.out.print("Enter your guess (" + lb + " - " + ub + "): ");
                 guess = sc.nextInt();
                 while (guess < lb || guess > ub) {
                     System.out.print("Please enter a number between (" + lb + "-" + ub + "): ");
@@ -78,8 +78,8 @@ public class NumberGuessingGame {
                 System.out.println("       CONGRATULATIONS!");
                 System.out.println("==================================");
                 System.out.println("You guessed the correct number!");
-                System.out.println("Number : " + number);
-                System.out.println("Attempts Used : " + attemptsUsed);
+                System.out.println("Correct Number : " + number);
+                System.out.println("Attempts Used  : " + attemptsUsed);
             } else {
                 System.out.println("\n==================================");
                 System.out.println("          GAME OVER");
@@ -163,7 +163,7 @@ public class NumberGuessingGame {
                     upperBound = sc.nextInt();
                 }
                 else{
-                    System.out.println("Upper bound cannot be less than LOWER BOUND.");
+                    System.out.println("Upper bound cannot be less than lower bound.");
                     System.out.print("Enter upper bound again: ");
                     upperBound = sc.nextInt();
                 }
@@ -176,13 +176,16 @@ public class NumberGuessingGame {
             System.out.println("----------------------------------");
         }
         else{
-            System.out.println("Welcome to QUICK GAME!");
-            System.out.println("Available Ranges");
-            System.out.println("1. 1-50");
-            System.out.println("2. 1-100");
-            System.out.println("3. 1-500");
-            System.out.println("4. 1-1000");
-            System.out.print("Enter choice: ");
+            System.out.println("\n==================================");
+            System.out.println("          QUICK GAME");
+            System.out.println("==================================");
+            System.out.println("Available Ranges:");
+            System.out.println();
+            System.out.println("1. 1 - 50");
+            System.out.println("2. 1 - 100");
+            System.out.println("3. 1 - 500");
+            System.out.println("4. 1 - 1000");
+            System.out.print("\nEnter your choice (1-4): ");
             int quickGameChoice = sc.nextInt();
             while(quickGameChoice<1 || quickGameChoice>4){
                 System.out.println("Invalid. Enter valid choice: ");
