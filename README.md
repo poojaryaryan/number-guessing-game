@@ -1,23 +1,26 @@
 # 🎯 Number Guessing Game
 
-A simple console-based Number Guessing Game built using **Java**. The game generates a random number between **1 and 100**, and the player must guess it using either **Limited Attempts** or **Unlimited Attempts** mode.
+A console-based **Number Guessing Game** built using **Java**. Choose between **Custom Game** (set your own lower and upper bounds) or **Quick Game** (select from predefined ranges), then play using either **Limited Attempts** or **Unlimited Attempts** mode.
 
-This project was built to strengthen my understanding of Java fundamentals, including loops, conditional statements, user input, random number generation, and game logic.
+This project was built to strengthen my understanding of Java fundamentals, including loops, conditional statements, user input, random number generation, methods, and game logic.
 
 ---
 
 ## ✨ Features
 
-- 🎲 Random number generation between **1 and 100**
-- 🎮 Two game modes:
-    - Limited Attempts
-    - Unlimited Attempts
-- 💡 Hints after every incorrect guess
-    - Too High
-    - Too Low
-- 📊 Displays the total number of attempts used
-- ✅ Input validation for user choices
-- 🔄 Play Again option
+- 🎮 Two game modes
+  - **Custom Game** – Choose your own lower and upper bounds.
+  - **Quick Game** – Select from predefined ranges.
+- 🎯 Two attempt modes
+  - **Limited Attempts**
+  - **Unlimited Attempts**
+- 🎲 Random number generation within the selected range.
+- 💡 Hints after every incorrect guess.
+  - Too High
+  - Too Low
+- 📊 Displays the total number of attempts used.
+- ✅ Input validation for menu choices and range selection.
+- 🔄 Play Again option.
 
 ---
 
@@ -36,9 +39,12 @@ This project was built to strengthen my understanding of Java fundamentals, incl
 number-guessing-game
 │
 ├── screenshots
-│   ├── interface.png
-│   ├── menu.png
-│   └── playagain.png
+│   ├── gameinterface.png
+│   ├── customgameui.png
+│   ├── quickgameui.png
+│   ├── attemptmodeui.png
+│   ├── gameover.png
+│   └── playagainui.png
 │
 ├── src
 │   └── NumberGuessingGame.java
@@ -58,24 +64,50 @@ git clone https://github.com/poojaryaryan/number-guessing-game.git
 
 ### Run the project
 
-1. Open the project in IntelliJ IDEA (or any Java IDE).
+1. Open the project in **IntelliJ IDEA** (or any Java IDE).
 2. Compile and run `NumberGuessingGame.java`.
 
 ---
 
 ## 📸 Screenshots
 
-### Main Menu
+<table>
+<tr>
+<td align="center">
+<b>🏠 Main Menu</b><br><br>
+<img src="screenshots/gameinterface.png" width="400">
+</td>
 
-![Main Menu](screenshots/menu.png)
+<td align="center">
+<b>🎮 Custom Game</b><br><br>
+<img src="screenshots/customgameui.png" width="400">
+</td>
+</tr>
 
-### Gameplay
+<tr>
+<td align="center">
+<b>⚡ Quick Game</b><br><br>
+<img src="screenshots/quickgameui.png" width="400">
+</td>
 
-![Gameplay](screenshots/interface.png)
+<td align="center">
+<b>🎯 Attempt Mode</b><br><br>
+<img src="screenshots/attemptmodeui.png" width="400">
+</td>
+</tr>
 
-### Play Again
+<tr>
+<td align="center">
+<b>🕹️ Game Over</b><br><br>
+<img src="screenshots/gameover.png" width="400">
+</td>
 
-![Play Again](screenshots/playagain.png)
+<td align="center">
+<b>🔄 Play Again</b><br><br>
+<img src="screenshots/playagainui.png" width="400">
+</td>
+</tr>
+</table>
 
 ---
 
@@ -83,4 +115,4 @@ git clone https://github.com/poojaryaryan/number-guessing-game.git
 
 **Aryan Poojary**
 
-- GitHub: https://github.com/poojaryaryan
+- GitHub: [@poojaryaryan](https://github.com/poojaryaryan)
